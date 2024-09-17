@@ -17,6 +17,12 @@ function setDate() {
     const hours = now.getHours();
     const hoursDegrees = ((hours / 12) * 360) + ((minutes / 60) * 30) + 90;
     hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
+    const digitalTime = document.getElementById('dig');
+    const hourss = String(now.getHours()).padStart(2, '0');
+    const minutess = String(now.getMinutes()).padStart(2, '0');
+    const secondss = String(now.getSeconds()).padStart(2, '0');
+    let tim=` ${hourss}:${minutess}:${secondss}`;
+    digitalTime.innerHTML =tim;
 }
 
 setInterval(setDate, 1000);
